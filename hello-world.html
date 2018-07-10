@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="helloVue">
+        {{ welcomeMessage }}
+    </div>
+
+    <div id="messageBoard">
+        <span v-bind:title="welcomeMessage">
+            Hover your cursor here to see the title.
+            {{ welcomeMessage }}
+        </span>
+    </div>
+
+    <div id="conditionTest">
+        <span v-if="seen">here we are...</span>
+    </div>
+</body>
+<script>
+    var helloVue = new Vue({
+        el: '#helloVue',
+        data: {
+            welcomeMessage: 'Hello Vue 2018'
+        }
+    })
+
+    var messageBoard = new Vue({
+        el: '#messageBoard',
+        data: {
+            welcomeMessage: 'Here is current time: ' + new Date().toLocaleString()
+        }
+    })
+
+    var conditionTest = new Vue({
+        el: '#conditionTest',
+        data: {
+            seen: true
+        }
+    })
+</script>
+
+</html>
