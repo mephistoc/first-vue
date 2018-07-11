@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="helloVue" class="container">
+        <div><span class="title">Hello Vue</span></div> {{ welcomeMessage }}
+    </div>
+
+    <div id="messageBoard" class="container">
+        <div><span class="title">Dynamic Generate Content</span></div>
+        <span v-bind:title="welcomeMessage">
+            Hover your cursor here to see the title.
+            {{ welcomeMessage }}
+        </span>
+    </div>
+
+    <div id="conditionTest" class="container">
+        <div><span class="title">Conditional Display</span></div>
+        <span v-if="seen">here we are...</span>
+    </div>
+
+    <div id="repeated" class="container">
+        <div><span class="title">Repeated Items</span></div>
+        <ol>
+            <li v-for="item in items">
+                {{item.desc}}
+            </li>
+        </ol>
+    </div>
+
+    <div id="inputDemo" class="container">
+        <span class="title">Input Demo</span>
+        <p>{{ message }}</p>
+        <input v-model="message">
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <script src="hello-world.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="vue-component" class="container">
+        <span class="title">Vue Component Demo</span>
+        <ol>
+            <product-list v-for="product in myProductList" v-bind:product="product" v-bind:key="product.id"></product-list>
+        </ol>
+    </div>
+
+    <script src='vue-component.js'></script>
+</body>
+
+</html>
